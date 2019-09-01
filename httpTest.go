@@ -6,9 +6,14 @@ import (
 	"log"
 	"net/http"
 	"net/url"
+	"strings"
 )
 
 func main() {
+	httpGetUsingHeader()
+}
+
+func httpGetUsingHeader() {
 	uri := "https://httpbin.org/get"
 	q := url.Values{}
 	q.Add("query", "1234")
@@ -26,6 +31,18 @@ func main() {
 		log.Fatal(err)
 	}
 	fmt.Printf("%s", robots)
+	str := string(robots)
+	spStr := strings.Split(str, "\n")
+	fmt.Println(spStr)
+	for index := 0; index < len(spStr); index++ {
+		n := strings.Index(spStr[index], "Authorization")
+		if n > 0 {
+			target := spStr[index][n:]
+			fmt.Println(target)
+			break
+		}
+	}
+	//	fmt.Println(n)
 }
 
 func simpleGet() {
