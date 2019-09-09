@@ -18,8 +18,9 @@ type Data struct {
 }
 
 func main() {
-	header := httpGetUsingHeader()
-	jsonTest(header)
+	DigestTest()
+	//header := httpGetUsingHeader()
+	//jsonTest(header)
 }
 
 func makeJSON() {
