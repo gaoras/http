@@ -18,7 +18,9 @@ type Data struct {
 }
 
 func main() {
-	DigestTest()
+	MyDigest()
+	//simpleGet()
+	//DigestTest()
 	//header := httpGetUsingHeader()
 	//jsonTest(header)
 }
